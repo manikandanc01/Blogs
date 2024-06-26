@@ -4,7 +4,7 @@
 In the world of command line interfaces (CLI), mastering essential tools can significantly enhance your productivity and efficiency. This guide focuses on five powerful commands: find, sed, awk, grep, and ls. Each command serves distinct purposes, from searching and filtering to text processing and directory listing.
 
 ## 1. find
-The find command is used for locating files and directories within a file system hierarchy.
+The find command searches for files and directories based on various criteria within a directory hierarchy.
 
 ### Basic Usage:
 
@@ -14,13 +14,12 @@ find /path/to/search -name "pattern"
 
 ### Flags and Use Cases:
 
-```
--name: Search by file name pattern.
--type: Filter by file type (f for regular files, d for directories).
--exec: Execute commands on found files.
--mtime: Filter by modification time.
 
-```
+-name "pattern": Search files by name pattern.
+-type d or -type f: Filter by directory (d) or regular file (f).
+-exec command {} +: Execute command on found files.
+-mtime n: Filter by file modification time (n days).
+
 ### Example:
 
 ```
