@@ -54,34 +54,53 @@ find /path/to/search -name "pattern"
  
 
 ## 2. sed
-The sed command is a powerful stream editor for text manipulation and transformation.
+The `sed` command is used for text stream processing, allowing you to perform text transformations
 
 ### Basic Usage:
 
 ```
 sed 's/pattern/replacement/g' filename
-
 ```
 
 ### Flags and Use Cases:
 
-```
 - `-e 'script'`: Specify multiple sed commands.
 - `-i`: Edit files in-place (make sure to backup important files).
 - `-n`: Suppress automatic printing of pattern space.
 
-```
+### Examples:
 
-### Example:
+1. **Replace "apple" with "orange" in file.txt and save changes:**
 
-```
-# Replace all occurrences of "apple" with "orange" in file.txt
-sed -i 's/apple/orange/g' file.txt
+    ```
+    # Before
+    **$ cat file.txt**
+    This is an apple.
+    ```
+    ```
+    sed -i 's/apple/orange/g' file.txt
+    # After
+    **$ cat file.txt**
+    This is an orange.
+    ```
+2. **Delete lines containing "pattern" from `file.txt`:**
 
-```
+    ```
+    # Before
+    $ cat file.txt
+    Line 1 with pattern
+    Line 2 without pattern
+    ```
+    
+    ```
+    sed -i '/pattern/d' file.txt
+    # After
+    $ cat file.txt
+    Line 2 without pattern
+    ```
 
 ## 3. awk
-The awk command is a versatile tool for pattern scanning and processing language.
+awk is a powerful pattern scanning and processing language for text files.
 
 ### Basic Usage:
 
@@ -91,22 +110,42 @@ awk '/pattern/ {print $1}' filename
 
 ### Flags and Use Cases:
 
-```
--F: Specify field separator.
--v: Assign variables.
-BEGIN and END: Actions before and after processing.
-```
 
-### Example:
+- `-F delimiter`:Specify field separator (default is whitespace).
+- `-v var=value`: Assign variables for use in the awk script.
+- `BEGIN` and `END` blocks: Actions to perform before processing starts and after processing ends.
 
-```
-# Print first column of lines containing "error" in log.txt
-awk '/error/ {print $1}' log.txt
+### Examples:
 
-```
+1. **Print the first column of lines containing "error" in log.txt:**
+    ```
+    # Before
+    $ cat log.txt
+    error 123
+    success 456
+    error 789
+    ```
+    ```
+    awk '/error/ {print $1}' log.txt
+    # Output
+    error
+    error
+    ```
+2. Print all lines longer than 80 characters in `file.txt`:
+   ```
+   # Before
+   $ cat file.txt
+   Line 1 with more than 80 characters 1234567890 1234567890 1234567890
+   Line 2 shorter
+   ```
+   ```
+   awk 'length($0) > 80' file.txt
+   # Output
+   Line 1 with more than 80 characters 1234567890 1234567890 1234567890
+   ```
 
 ## 4. grep
-The grep command is used for searching text patterns within files.
+The `grep` command searches for patterns in files and outputs matching lines
 
 ### Basic Usage:
 
@@ -116,19 +155,39 @@ grep "pattern" filename
 
 ### Flags and Use Cases:
 
-```
--i: Ignore case distinctions.
--r: Recursively search directories.
--n: Show line numbers.
-```
 
-### Example:
+- `-i`: Ignore case distinctions in the pattern.
+- `-r`: Recursively search directories.
+- `-n`: Show line numbers.
 
-```
-# Search for "error" in all files in the current directory
-grep -r "error" .
 
-```
+### Examples:
+
+1. **Search for "error" in all files in the current directory:**
+   ```
+   # Before
+   $ cat file1.txt
+   This line has an error.
+   $ cat file2.txt
+   No errors here.
+   ```
+   ```
+   grep -r "error" .
+   # Output
+   file1.txt:This line has an error.
+   ```
+2. **Search for "pattern" case insensitively in file.txt:**
+   ```
+   # Before
+   $ cat file.txt
+   Pattern found
+   No Pattern found
+   ```
+   ```
+   grep -i "pattern" file.txt
+   # Output
+   Pattern found
+   ```
 
 ## 5. ls
 The ls command lists directory contents.
@@ -137,23 +196,34 @@ The ls command lists directory contents.
 
 ```
 ls /path/to/directory
-
 ```
 
 ### Flags and Use Cases:
-```
--l: Long format listing.
--a: Include hidden files.
--t: Sort by time modified.
-```
 
-### Example:
+- `-l`: Long format listing.
+- `-a`: Include hidden files.
+- `-t`: Sort by time modified.
 
-```
-# List all files (including hidden) in long format in the current directory
-ls -la
 
-```
+### Examples:
+
+1. List all files (including hidden) in long format in the current directory:
+   ```
+   $ ls -la
+   # Output
+   drwxr-xr-x  2 user group  4096 Jun 26 10:00 .
+   drwxr-xr-x 10 user group  4096 Jun 20 12:00 ..
+   -rw-r--r--  1 user group   100 Jun 25 14:30 file1.txt
+   -rw-r--r--  1 user group   200 Jun 24 09:45 .hiddenfile
+   ```
+2. List directories only in /home/user:
+   ```
+   $ ls -l /home/user | grep '^d'
+   # Output
+   drwxr-xr-x  2 user group  4096 Jun 25 16:00 docs
+   drwxr-xr-x  3 user group  4096 Jun 24 11:30 pictures
+   ```
+
 ## Conclusion
 Mastering these command line tools — find, sed, awk, grep, and ls — empowers you to efficiently manage files, search text, and process data directly from the command line. By understanding their flags, use cases, and examples, you can streamline your workflow and tackle a wide range of tasks effectively.
 
