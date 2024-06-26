@@ -1,4 +1,4 @@
-### Mastering Essential Command Line Tools: find, sed, awk, grep, ls
+# Mastering Essential Command Line Tools: find, sed, awk, grep, ls
 
 ## Introduction
 In the world of command line interfaces (CLI), mastering essential tools can significantly enhance your productivity and efficiency. This guide focuses on five powerful commands: find, sed, awk, grep, and ls. Each command serves distinct purposes, from searching and filtering to text processing and directory listing.
