@@ -27,11 +27,36 @@ find /path/to/search -name "pattern"
 find . -name "*.txt"
 ```
 
+### Output:
 ```
-#Output`#0969DA`
 ./file1.txt
 ./folder/file2.txt
 ```
+
+2. Find directories named "docs" in `/home/user`:
+
+```
+find /home/user -type d -name "docs"
+```
+
+### Output:
+
+```
+/home/user/docs
+```
+3. Find files modified in the last 7 days:
+
+```
+find . -mtime -7
+```
+
+### Output
+
+```
+./file1.txt
+./folder/file2.txt
+```
+
  
 
 ## 2. sed
