@@ -15,10 +15,10 @@ find /path/to/search -name "pattern"
 ### Flags and Use Cases:
 
 
-- -name "pattern": Search files by name pattern.
-- -type d or -type f: Filter by directory (d) or regular file (f).
-- -exec command {} +: Execute command on found files.
-- -mtime n: Filter by file modification time (n days).
+- `-name "pattern"`: Search files by name pattern.
+- `-type d or -type f`: Filter by directory (`d`) or regular file (`f`).
+- `-exec command {} +`: Execute command on found files.
+- `-mtime n`: Filter by file modification time (`n` days).
 
 ### Example:
 
