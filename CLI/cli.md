@@ -74,13 +74,13 @@ sed 's/pattern/replacement/g' filename
 
     ```
     # Before
-    **$ cat file.txt**
+    $ cat file.txt
     This is an apple.
     ```
     ```
     sed -i 's/apple/orange/g' file.txt
     # After
-    **$ cat file.txt**
+    $ cat file.txt
     This is an orange.
     ```
 2. **Delete lines containing "pattern" from `file.txt`:**
@@ -100,7 +100,7 @@ sed 's/pattern/replacement/g' filename
     ```
 
 ## 3. awk
-awk is a powerful pattern scanning and processing language for text files.
+`awk` is a powerful pattern scanning and processing language for text files.
 
 ### Basic Usage:
 
@@ -190,7 +190,7 @@ grep "pattern" filename
    ```
 
 ## 5. ls
-The ls command lists directory contents.
+The `ls` command lists directory contents.
 
 ### Basic Usage:
 
@@ -207,7 +207,7 @@ ls /path/to/directory
 
 ### Examples:
 
-1. List all files (including hidden) in long format in the current directory:
+1. **List all files (including hidden) in long format in the current directory:**
    ```
    $ ls -la
    # Output
@@ -216,7 +216,7 @@ ls /path/to/directory
    -rw-r--r--  1 user group   100 Jun 25 14:30 file1.txt
    -rw-r--r--  1 user group   200 Jun 24 09:45 .hiddenfile
    ```
-2. List directories only in /home/user:
+2. **List directories only in /home/user:**
    ```
    $ ls -l /home/user | grep '^d'
    # Output
