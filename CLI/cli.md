@@ -20,19 +20,24 @@ find /path/to/search -name "pattern"
 - `-exec command {} +`: Execute command on found files.
 - `-mtime n`: Filter by file modification time (`n` days).
 
-### Example:
+### Examples:
 
+1. Find all .txt files in the current directory and its subdirectories:
 ```
-> # Find all .txt files in the current directory and its subdirectories
 find . -name "*.txt"
 
-> # Find directories named "docs" in /home/user
-find /home/user -type d -name "docs"
-
 ```
 
+```
+#Output
+./file1.txt
+./folder/file2.txt
+
+```
+ 
+
 ## 2. sed
-The sed command (stream editor) is used for filtering and transforming text.
+The sed command is a powerful stream editor for text manipulation and transformation.
 
 ### Basic Usage:
 
@@ -44,9 +49,9 @@ sed 's/pattern/replacement/g' filename
 ### Flags and Use Cases:
 
 ```
--e: Specify multiple sed commands.
--i: Edit files in-place.
--n: Suppress automatic printing.
+- `-e 'script'`: Specify multiple sed commands.
+- `-i`: Edit files in-place (make sure to backup important files).
+- `-n`: Suppress automatic printing of pattern space.
 
 ```
 
