@@ -25,14 +25,12 @@ find /path/to/search -name "pattern"
 1. Find all .txt files in the current directory and its subdirectories:
 ```
 find . -name "*.txt"
-
 ```
 
 ```
-#Output
+#Output`#0969DA`
 ./file1.txt
 ./folder/file2.txt
-
 ```
  
 
