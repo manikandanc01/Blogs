@@ -39,7 +39,7 @@ find . -name "*.txt"
 find /home/user -type d -name "docs"
 ```
 
-### Output:
+Output:
 
 ```
 /home/user/docs
@@ -50,7 +50,7 @@ find /home/user -type d -name "docs"
 find . -mtime -7
 ```
 
-### Output
+Output
 
 ```
 ./file1.txt
