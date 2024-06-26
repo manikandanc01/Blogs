@@ -23,39 +23,33 @@ find /path/to/search -name "pattern"
 ### Examples:
 
 1. Find all .txt files in the current directory and its subdirectories:
-```
-find . -name "*.txt"
-```
-
-### Output:
-```
-./file1.txt
-./folder/file2.txt
-```
+   ```
+   find . -name "*.txt"
+   ```
+   Output:
+   ```
+   ./file1.txt
+   ./folder/file2.txt
+   ```
 
 2. Find directories named "docs" in `/home/user`:
-
-```
-find /home/user -type d -name "docs"
-```
-
-Output:
-
-```
-/home/user/docs
-```
+   ```
+   find /home/user -type d -name "docs"
+   ```
+   Output:
+   ```
+   /home/user/docs
+   ```
 3. Find files modified in the last 7 days:
 
-```
-find . -mtime -7
-```
-
-Output
-
-```
-./file1.txt
-./folder/file2.txt
-```
+   ```
+   find . -mtime -7
+   ```
+   Output
+   ```
+   ./file1.txt
+   ./folder/file2.txt
+   ```
 
  
 
