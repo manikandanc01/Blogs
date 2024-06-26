@@ -23,10 +23,10 @@ find /path/to/search -name "pattern"
 ### Example:
 
 ```
-# Find all .txt files in the current directory and its subdirectories
+> # Find all .txt files in the current directory and its subdirectories
 find . -name "*.txt"
 
-# Find directories named "docs" in /home/user
+> # Find directories named "docs" in /home/user
 find /home/user -type d -name "docs"
 
 ```
