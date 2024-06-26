@@ -6,13 +6,13 @@ In the world of command line interfaces (CLI), mastering essential tools can sig
 ## 1. find
 The find command is used for locating files and directories within a file system hierarchy.
 
-## Basic Usage:
+### Basic Usage:
 
 ```
 find /path/to/search -name "pattern"
 ```
 
-## Flags and Use Cases:
+### Flags and Use Cases:
 
 ```
 -name: Search by file name pattern.
@@ -21,7 +21,7 @@ find /path/to/search -name "pattern"
 -mtime: Filter by modification time.
 
 ```
-## Example:
+### Example:
 
 ```
 # Find all .txt files in the current directory and its subdirectories
@@ -35,14 +35,14 @@ find /home/user -type d -name "docs"
 ## 2. sed
 The sed command (stream editor) is used for filtering and transforming text.
 
-## Basic Usage:
+### Basic Usage:
 
 ```
 sed 's/pattern/replacement/g' filename
 
 ```
 
-## Flags and Use Cases:
+### Flags and Use Cases:
 
 ```
 -e: Specify multiple sed commands.
@@ -51,7 +51,7 @@ sed 's/pattern/replacement/g' filename
 
 ```
 
-## Example:
+### Example:
 
 ```
 # Replace all occurrences of "apple" with "orange" in file.txt
@@ -62,13 +62,13 @@ sed -i 's/apple/orange/g' file.txt
 ## 3. awk
 The awk command is a versatile tool for pattern scanning and processing language.
 
-## Basic Usage:
+### Basic Usage:
 
 ```
 awk '/pattern/ {print $1}' filename
 ```
 
-## Flags and Use Cases:
+### Flags and Use Cases:
 
 ```
 -F: Specify field separator.
@@ -76,7 +76,7 @@ awk '/pattern/ {print $1}' filename
 BEGIN and END: Actions before and after processing.
 ```
 
-## Example:
+### Example:
 
 ```
 # Print first column of lines containing "error" in log.txt
@@ -87,40 +87,46 @@ awk '/error/ {print $1}' log.txt
 ## 4. grep
 The grep command is used for searching text patterns within files.
 
-## Basic Usage:
+### Basic Usage:
 
-bash
-Copy code
+```
 grep "pattern" filename
-Flags and Use Cases:
+```
 
+### Flags and Use Cases:
+
+```
 -i: Ignore case distinctions.
 -r: Recursively search directories.
 -n: Show line numbers.
-Example:
+```
 
-bash
-Copy code
+### Example:
+
+```
 # Search for "error" in all files in the current directory
 grep -r "error" .
-5. ls
+
+```
+
+## 5. ls
 The ls command lists directory contents.
 
-Basic Usage:
+### Basic Usage:
 
 ```
 ls /path/to/directory
 
 ```
 
-## Flags and Use Cases:
+### Flags and Use Cases:
 ```
 -l: Long format listing.
 -a: Include hidden files.
 -t: Sort by time modified.
 ```
 
-## Example:
+### Example:
 
 ```
 # List all files (including hidden) in long format in the current directory
